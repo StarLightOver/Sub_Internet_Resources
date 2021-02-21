@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Suity | Checkout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <!-- Custom Theme files -->
+    <!--webfont-->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<header>
+    <!-- Заголовочная часть - Войти\Выйти\Заказы -->
+    <div class="topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-sm-7 col-md-7 col-lg-8">
+                    <div class="left-topbar">
+                        <p id="left-topbar">Добро пожаловать в наш онлайн магазин. Пожалуйства
+                            <a href="login.html"> авторизуйтесь </a>
+                            или
+                            <a href="register.html"> зарегистрируйтесь</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+                    <div class="right-topbar">
+                        <ul>
+                            <li id="orders" class="tabs-sort-1" style="cursor: pointer; display: none">Мои заказы</li>
+                            <li id="input" class="tabs-sort-1" style="cursor: pointer"></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Конец заголовочной части -->
+</header>
+<div class="sales">
+    <div class="container">
+        <div class="header_top">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt=""/></a>
+            </div>
+            <div class="header-bottom-right" style="display: none">
+                <ul class="icon1 sub-icon1 profile_img">
+                    <li>
+                        <a class="active-icon c1" href="#">Корзина</a>
+                        <div id="card_count" class="rate">0</div>
+                        <ul class="sub-icon1 list">
+                            <div id="card" class="shopping_cart">
+                                <!--Корзина-->
+                            </div>
+                            <div class="total">
+                                <div class="total_left">Итоговая сумма :</div>
+                                <div id="total" class="total_right">$0.00</div>
+                                <div id="login_buttons"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div class="about_top">
+    <div class="container">
+        <div class="col-md-12 content_right">
+            <div class="dreamcrub">
+                <ul class="breadcrumbs">
+                    <li class="home">
+                        <a href="index.html" title="Go to Home Page">Главная</a>&nbsp;
+                        <span>&gt;</span>
+                    </li>
+                    <li class="women">
+                        Заказы
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <h1 class="title1">Мои заказы</h1>
+			<table class="table">
+				<thead style="font-size: calc(8px + (18 - 14) * ( (100vw - 480px) / ( 1024 - 480) ));">
+				<tr>
+					<th scope="col">Название</th>
+					<th scope="col">Заказ</th>
+					<th scope="col">Дата</th>
+					<th scope="col">Стоимость</th>
+					<th scope="col">Адрес получения</th>
+				</tr>
+				</thead>
+				<tbody id="order_form" style="font-size: calc(8px + (18 - 14) * ( (100vw - 480px) / ( 1024 - 480) ));">
+				</tbody>
+			</table>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <img src="images/f_logo.png" alt=""/>
+        <p><a href="">suity.com</a></p>
+        <ul class="social">
+            <li><a href="#"> <i class="fb"> </i> </a></li>
+            <li><a href="#"> <i class="tw"> </i> </a></li>
+        </ul>
+    </div>
+</div>
+<script src="js/scripts.js" type="text/javascript"></script>
+<script src="js/script_orders.js" type="text/javascript"></script>
+</body>
+</html>		

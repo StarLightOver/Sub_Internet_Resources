@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Suity | Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <!-- Custom Theme files -->
+    <!--webfont-->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script>$(document).ready(function (c) {
+        $('.alert-close').on('click', function (c) {
+            $('.message').fadeOut('slow', function (c) {
+                $('.message').remove();
+            });
+        });
+    });
+    </script>
+    <script>$(document).ready(function (c) {
+        $('.alert-close1').on('click', function (c) {
+            $('.message1').fadeOut('slow', function (c) {
+                $('.message1').remove();
+            });
+        });
+    });
+    </script>
+    <script>$(document).ready(function (c) {
+        $('.alert-close2').on('click', function (c) {
+            $('.message2').fadeOut('slow', function (c) {
+                $('.message2').remove();
+            });
+        });
+    });
+    </script>
+</head>
+<body>
+<div class="sales">
+    <div class="container">
+        <div class="header_top">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt=""/></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div class="about_top">
+    <div class="container">
+        <div class="col-md-9 content_right">
+            <div class="dreamcrub">
+                <ul class="breadcrumbs">
+                    <li class="home">
+                        <a href="index.html" title="Go to Home Page">Главная</a>&nbsp;
+                        <span>&gt;</span>
+                    </li>
+                    <li class="women">
+                        Авторизация
+                    </li>
+                </ul>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="register">
+                <div class="col-md-6 login-right">
+                    <h3 style="cursor: default;">Зарегестрированным пользователям</h3>
+                    <p style="cursor: default;">Если Вы имеете аккаунт у нас, то просим ввести Ваш Email и пароль.</p>
+                    <form>
+                        <div >
+                            <span>Логин<label>*</label></span>
+                            <input id="login" type="text" class="form-control" style="width: 350px">
+                        </div>
+                        <div >
+                            <span>Пароль<label>*</label></span>
+                            <input id="pass" type="password" class="form-control" style="width: 350px">
+                        </div>
+                        <div id="error" class="" role="alert"></div>
+						<br>
+                        <input id="input" type="submit" value="Войти">
+                    </form>
+                </div>
+                <div class="col-md-6 login-left">
+                    <h3 style="cursor: default;">Новым пользователям</h3>
+                    <p style="cursor: default;">Тут должен быть длинный вступительный текст о том, как прекрасен этот сайт.
+                        Но нет, тут не будет ничего. Только регистрация.</p>
+                    <a class="acount-btn" href="register.html">Создать аккаунт</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <img src="images/f_logo.png" alt=""/>
+        <p><a href="">suity.com</a></p>
+        <ul class="social">
+            <li><a href="#"> <i class="fb"> </i> </a></li>
+            <li><a href="#"> <i class="tw"> </i> </a></li>
+        </ul>
+    </div>
+</div>
+<script src="js/script_authorization.js"></script>
+</body>
+</html>		

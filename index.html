@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Suity | Home</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="css/style_index.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <style>
+        /* Dropdown Button */
+        .dropbtn {
+            background-color: white;
+            color: #777777;
+            padding: 5px 20px;
+            width: 140px;
+            font-size: 16px;
+            border: 1px solid #fbc008;
+            cursor: pointer;
+        }
+
+        /* Dropdown button on hover & focus */
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: #fbc008;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f6f6f6;
+            min-width: 230px;
+            border: 1px solid #fbc008;
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 10px 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #fbc008
+        }
+    </style>
+</head>
+<body>
+<!--Начало - модальное окно-->
+<div class="col-xs-9 col-sm-7 col-md-7 col-lg-9">
+    <div class="modal-overlay closed" id="modal-overlay"></div>
+    <div class="modal closed" id="modal" aria-hidden="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" role="dialog">
+        <ul>
+            <li>
+                <div class="modal-guts" role="document">
+                    <h3 id="title-h3">Оформление заказа</h3>
+                    <p id="text-p">Формы для подтверждения заказа:</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="name_order">Название заказа</label><input id="name_order">
+                </div>
+            </li>
+            <li>
+                <div class="form_radio">
+                    <p>Выберете место для получения заказа:</p>
+                    <input id="radio-1" type="radio" name="radio" value="1">
+                    <label for="radio-1">г. Киров, ул. Московская, д. 36, ауд. 224</label>
+                </div>
+
+                <div class="form_radio">
+                    <input id="radio-2" type="radio" name="radio" value="2" checked>
+                    <label for="radio-2">г. Киров, ул. Московская, д. 36, ауд. 239</label>
+                </div>
+
+                <div class="form_radio">
+                    <input id="radio-3" type="radio" name="radio" value="3">
+                    <label for="radio-3">г. Киров, ул. Московская, д. 36, ауд. 241</label>
+                </div>
+            </li>
+            <li>
+                <button class="close-button" id="close-button">Оплатить заказ</button>
+            </li>
+            <li style="margin-top: 10px">
+                <div id="err" class="" role="alert" style="min-width: 140px; font-size: 80%; padding: 7px"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--Конец - модальное окно-->
+<header>
+    <!-- Заголовочная часть - Войти\Выйти\Заказы -->
+    <div class="topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-sm-7 col-md-7 col-lg-8">
+                    <div class="left-topbar">
+                        <p id="left-topbar">Добро пожаловать в наш онлайн магазин. Пожалуйства
+                            <a href="login.html"> авторизуйтесь </a>
+                            или
+                            <a href="register.html"> зарегистрируйтесь</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+                    <div class="right-topbar">
+                        <ul>
+                            <li id="orders" class="tabs-sort-1" style="cursor: pointer; display: none">Мои заказы</li>
+                            <li id="input" class="tabs-sort-1" style="cursor: pointer"></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Конец заголовочной части -->
+</header>
+<div class="index-banner">
+    <div class="container">
+        <div class="header_top">
+            <div class="logo">
+                <a href="index.html"><img alt="" src="images/logo.png"/></a>
+            </div>
+            <div class="header-bottom-right" style="display: none">
+                <ul class="icon1 sub-icon1 profile_img">
+                    <li>
+                        <a class="active-icon c1" href="#">Корзина</a>
+                        <div id="card_count" class="rate">0</div>
+                        <ul class="sub-icon1 list">
+                            <div id="card" class="shopping_cart">
+                                <!--Корзина-->
+                            </div>
+                            <div class="total">
+                                <div class="total_left">Итоговая сумма :</div>
+                                <div id="total" class="total_right">$0.00</div>
+                                <div id="login_buttons"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="wmuSlider example1">
+        <article style="position: absolute; width: 100%; opacity: 0;">
+            <div class="banner-wrap">
+                <h1>Приветствую</h1>
+            </div>
+        </article>
+        <article style="position: absolute; width: 100%; opacity: 0;">
+            <div class="banner-wrap">
+                <h1 id="name_user">Гость</h1>
+            </div>
+        </article>
+        <article style="position: absolute; width: 100%; opacity: 0;">
+            <div class="banner-wrap">
+                <h1>На suity.rirshop.ml</h1>
+            </div>
+        </article>
+    </div>
+    <script src="js/jquery.wmuSlider.js"></script>
+    <script>
+        $('.example1').wmuSlider();
+    </script>
+</div>
+<div class="content_top">
+    <div class="container">
+        <div class="col-sm-3 col-md-3">
+            <div class="hiraola-sidebar-catagories_area">
+                <div class="hiraola-sidebar_categories">
+                    <div class="hiraola-categories_title" style="border-bottom: none">
+                        <h5>Категория</h5>
+                    </div>
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Все товары</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a id="all" style="cursor: pointer">Все товары</a>
+                            <a id="jacket" style="cursor: pointer">Куртки</a>
+                            <a id="jeans" style="cursor: pointer">Джинсы</a>
+                            <a id="boots" style="cursor: pointer">Ботинки</a>
+                        </div>
+                        <script>
+                            function myFunction() {
+                                document.getElementById("myDropdown").classList.toggle("show");
+                            }
+
+                            window.onclick = function (event) {
+                                if (!event.target.matches('.dropbtn')) {
+                                    let dropdowns = document.getElementsByClassName("dropdown-content");
+                                    for (let i = 0; i < dropdowns.length; i++) {
+                                        let openDropdown = dropdowns[i];
+                                        if (openDropdown.classList.contains('show')) {
+                                            openDropdown.classList.remove('show');
+                                        }
+                                    }
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="hiraola-sidebar_categories">
+                    <div class="hiraola-categories_title" style="border-bottom: none">
+                        <h5>Цена</h5>
+                    </div>
+                    <div class="container">
+                        <ul>
+                            <li class="item-vertical" style="margin-top: 5px; margin-bottom: 5px">
+                                <p>От $0 до $999</p>
+                            </li>
+                            <li class="item-vertical" style="margin-top: 5px; margin-bottom: 5px">
+                                <input type="text" id="input_minimum" class="form-control form-inline"
+                                       style="width: 125px; border: 1px solid #ffc201;" placeholder="Минимум"
+                                       aria-label="minimum">
+                            </li>
+                            <li class="item-vertical" style="margin-top: 5px; margin-bottom: 5px">
+                                <input type="text" id="input_maximum" class="form-control form-inline"
+                                       style="width: 125px; border: 1px solid #ffc201;" placeholder="Максимум"
+                                       aria-label="minimum">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hiraola-sidebar_categories">
+                    <div class="hiraola-categories_title">
+                        <h5>Материал</h5>
+                    </div>
+                    <ul id="material" class="sidebar-checkbox_list">
+                        <li>
+                            <input id="cotton" type="checkbox" checked name="raz0" style="cursor: pointer"> Хлопок
+                        </li>
+                        <li>
+                            <input id="polyester" type="checkbox" checked name="raz1" style="cursor: pointer"> Полиэстер
+                        </li>
+                        <li>
+                            <input id="spatex" type="checkbox" checked name="raz2" style="cursor: pointer"> Спатекс
+                        </li>
+                        <li>
+                            <input id="viscose" type="checkbox" checked name="raz3" style="cursor: pointer"> Вискоза
+                        </li>
+                        <li>
+                            <input id="leather" type="checkbox" checked name="raz4" style="cursor: pointer"> Кожа
+                        </li>
+                        <li>
+                            <input id="ecoleather" type="checkbox" checked name="raz4" style="cursor: pointer"> Экокожа
+                        </li>
+                    </ul>
+                </div>
+                <div class="hiraola-sidebar_categories">
+                    <div class="hiraola-categories_title">
+                        <h5>Цвет</h5>
+                    </div>
+                    <ul id="color" class="sidebar-checkbox_list">
+                        <li>
+                            <input id="white" type="checkbox" checked name="add1" style="cursor: pointer"> Белый
+                        </li>
+                        <li>
+                            <input id="black" type="checkbox" checked name="add2"style="cursor: pointer"> Черный
+                        </li>
+                        <li>
+                            <input id="red" type="checkbox" checked name="add3" style="cursor: pointer"> Красный
+                        </li>
+                        <li>
+                            <input id="blue" type="checkbox" checked name="add4" style="cursor: pointer"> Синий
+                        </li>
+                        <li>
+                            <input id="yellow" type="checkbox" checked name="add5" style="cursor: pointer"> Желтый
+                        </li>
+                        <li>
+                            <input id="green" type="checkbox" checked name="add6" style="cursor: pointer"> Зеленый
+                        </li>
+                    </ul>
+                </div>
+                <div class="hiraola-sidebar_categories" style="padding: 0">
+                    <ul style="margin-top: 15px; margin-bottom: 15px;">
+                        <li>
+                            <div id="error" class="" role="alert" style="min-width: 140px; font-size: 80%; padding: 7px"></div>
+                        </li>
+                        <li class="item-vertical" style="margin-top: 5px; margin-bottom: 5px">
+                            <button id="button_reset" class="btn" style="border: 1px solid #ffc201">Сбросить</button>
+                        </li>
+                        <li class="item-vertical" style="margin-top: 5px; margin-bottom: 5px">
+                            <button id="button_accept" class="btn" style="border: 1px solid #ffc201">Применить</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9 col-md-9 content_right">
+            <div id="content" class="content_right-box">
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <img alt="" src="images/f_logo.png"/>
+        <p><a href="">my-shop.com</a></p>
+        <ul class="social">
+            <li><a href="#"> <i class="fb"> </i> </a></li>
+            <li><a href="#"> <i class="tw"> </i> </a></li>
+        </ul>
+    </div>
+</div>
+<script src="js/scripts.js"></script>
+<script src="js/script_modal.js"></script>
+<script src="js/script_card.js"></script>
+<script src="js/script_index.js"></script>
+</body>
+</html>		

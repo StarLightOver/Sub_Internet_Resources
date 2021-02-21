@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Suity | Register</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <!-- Custom Theme files -->
+    <!--webfont-->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script>$(document).ready(function (c) {
+        $('.alert-close').on('click', function (c) {
+            $('.message').fadeOut('slow', function (c) {
+                $('.message').remove();
+            });
+        });
+    });
+    </script>
+    <script>$(document).ready(function (c) {
+        $('.alert-close1').on('click', function (c) {
+            $('.message1').fadeOut('slow', function (c) {
+                $('.message1').remove();
+            });
+        });
+    });
+    </script>
+    <script>$(document).ready(function (c) {
+        $('.alert-close2').on('click', function (c) {
+            $('.message2').fadeOut('slow', function (c) {
+                $('.message2').remove();
+            });
+        });
+    });
+    </script>
+
+</head>
+<body>
+<div class="sales">
+    <div class="container">
+        <div class="header_top">
+            <div class="logo">
+                <a href="index.html"><img alt="" src="images/logo.png"/></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div class="about_top">
+    <div class="container">
+        <div class="col-md-9 content_right">
+            <div class="dreamcrub">
+                <ul class="breadcrumbs">
+                    <li class="home">
+                        <a href="index.html" title="Go to Home Page">Главная</a>&nbsp;
+                        <span>&gt;</span>
+                    </li>
+                    <li class="women">
+                        Регистрация
+                    </li>
+                </ul>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="register">
+                <form class="form-horizontal">
+                    <div class="register-top-grid">
+                        <h3>Персональная информация</h3>
+                        <div>
+                            <span>Имя<label>*</label></span>
+                            <input id="name">
+                        </div>
+                        <div>
+                            <span>Фамилия<label>*</label></span>
+                            <input id="family">
+                        </div>
+                        <div>
+                            <span>Email<label>*</label></span>
+                            <input id="email" type="email">
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="row">
+                            <label class="checkbox">
+                                <input id="confidence" name="checkbox" type="checkbox">
+                                <i></i><a href="http://localhost:100/User.pdf" target="_blank">Политика
+                                конфиденциальности</a>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="register-bottom-grid">
+                        <div>
+                            <span>Логин<label>*</label></span>
+                            <input id="login">
+                        </div>
+                        <div>
+                            <span>Пароль<label>*</label></span>
+                            <input id="pass" type="password">
+                        </div>
+                        <div>
+                            <span>Повторите пароль<label>*</label></span>
+                            <input id="confirmed_pass" type="password">
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+                <div class="register-but">
+                    <form>
+                        <div id="error" class="" role="alert"></div>
+                        <input id="input" type="submit" value="Зарегистрироваться">
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <img alt="" src="images/f_logo.png"/>
+        <p><a href="">suity.com</a></p>
+        <ul class="social">
+            <li><a href="#"> <i class="fb"> </i> </a></li>
+            <li><a href="#"> <i class="tw"> </i> </a></li>
+        </ul>
+    </div>
+</div>
+<script src="js/script_register.js" type="text/javascript"></script>
+</body>
+</html>		
